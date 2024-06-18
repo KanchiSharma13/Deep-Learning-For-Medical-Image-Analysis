@@ -37,15 +37,25 @@ test_image_labels = '/content/drive/MyDrive/B. Disease Grading/B. Disease Gradin
 train_csv = pd.read_csv(train_image_labels)
 test_csv = pd.read_csv(test_image_labels)
 
+# print(train_csv.columns)
+# unique = train_csv['Retinopathy grade'].unique()
+# print(unique)
+# for grade in unique:
+#     print(f"Images with retinopathy grade {grade}:")
+#     images = train_csv[train_csv['Retinopathy grade'] == grade]['Image name']
+#     for image in images:
+#         print(image)
+#         print("\n")
+
 transform = transforms.Compose([
-        transforms.RandomResizedCrop(224), #resized to resnet input
+        transforms.RandomResizedCrop((224,224)), #resized to resnet input
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]) #normalize like ImageNet
     ])
 
 class IDRIDDataset(Dataset):
-    def __init__(self, img_dir, csv_data, transform=None, file_extension=".jpg"):
+    def __init__(self, img_dir, csv_data, transform, file_extension=".jpg"):
         self.img_dir = img_dir
         self.csv_data = csv_data
         self.transform = transform
@@ -131,13 +141,16 @@ print(f'Classification Accuracy: {accuracy:.4f}')
 print(f'Precision: {precision:.4f}')
 print(f'Recall: {recall:.4f}')
 print(f'F1-Score: {f1:.4f}')
-
 print('Classification Report:')
 print(classification_report(y_true, y_pred))
 
 sensitivity = {}
 specificity = {}
 conf_mat = confusion_matrix(y_true, y_pred)
+class_accuracies = conf_mat.diagonal() / conf_mat.sum(axis=1)
+for idx, class_accuracy in enumerate(class_accuracies):
+    print(f"Class {idx} Accuracy: {class_accuracy:.4f}")
+
 for i in range(num_classes):
     tp = conf_mat[i, i]
     fn = conf_mat[i, :].sum() - tp
