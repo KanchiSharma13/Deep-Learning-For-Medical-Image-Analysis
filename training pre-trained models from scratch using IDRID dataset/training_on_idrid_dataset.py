@@ -84,7 +84,7 @@ batch_size = 64
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle = True)
 test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle = False)
 
-model = models.resnet18(pretrained=True)
+model = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
 num_features = model.fc.in_features
 num_classes = len(set(train_csv['Retinopathy grade'].tolist()))
 model.fc = nn.Linear(num_features,num_classes)
