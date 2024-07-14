@@ -27,9 +27,9 @@ The results are provided for three different setups. In the first approach, we p
 <h5>Case 1: Multiclass Classification(Grade 0, 1, 2, 3, 4)</h5>
 <img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case1.png" width="600" height="300"><br>
 <h5>Case 2: 4 class scenario(Grade 0, 1+2, 3, 4)</h5>
-<img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case2.png" width="600" height="240"><br>
+<img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case2.png" width="600" height="200"><br>
 <h5>Case 3: Binary Classification(Grade 0 & 3)</h5>
-<img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case3.png" width="600" height="210"><br>
+<img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case3.png" width="600" height="200"><br>
 
 <h3>Conclusion & Discussion</h3>
 Experiments performed have shown the superiority of convolutional networks including residual blocks with respect to non-residual architectures such as VGGnet & AlexNet. Having a huge number of parameters makes it difficult to learn simpler functions. This way, residual blocks, which add up the result of the previous layer to the output of the former bypassing it, ease the learning of simple functions. On the other hand, they also mitigate the vanishing gradient problem that hinders the training process. The experiments we carried out show that our work has achieved better results in cases 1 & 2 than in the original study. 
