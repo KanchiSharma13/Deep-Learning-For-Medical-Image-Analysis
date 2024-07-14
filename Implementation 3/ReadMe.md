@@ -25,7 +25,7 @@ To compare the ResNet-based system with the state of the art, we have trained an
 <h3>Results</h3>
 The results are provided for three different setups. In the first approach, we present the most challenging scenario: a full multiclass grading using the different models on the five different labels(classes: 0, 1, 2, 3, 4). Then, we test an aggregation of the 1 and 2 labels(classes: 0, 1+2, 3, 4). Finally, we also provide an analysis of the performance of a binary classification scenario covering grades 0 and 4. Evaluation parameters such as sensitivity and specificity (Sens. and Spec., only for binary classification) and the Receiver Operating Characteristic (ROC) curve, as well as the area under the ROC (AUC) were computed per class.<br>
 <h5>Case 1: Multiclass Classification(Grade 0, 1, 2, 3, 4)</h5>
-<img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case1.png" width="600" height="350"><br>
+<img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case1.png" width="600" height="300"><br>
 <h5>Case 2: 4 class scenario(Grade 0, 1+2, 3, 4)</h5>
 <img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case2.png" width="600" height="240"><br>
 <h5>Case 3: Binary Classification(Grade 0 & 3)</h5>
