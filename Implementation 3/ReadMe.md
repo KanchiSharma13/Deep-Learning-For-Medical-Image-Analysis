@@ -7,9 +7,9 @@ In previous implementations involving IDRiD, data imbalance and overfitting are 
 <br><br>
 <h3>Research Methodology</h3>
 The paper uses transfer learning approach on a ResNet-based system(ResNet18 & ResNet50). The layers are unfrozen as per the two training stages proposed(in the next section). All parameters on the highlighted layers are retrained in the finetuning step. Note that in ResNet-50, two re-training cases are proposed: in ResNet-50a only the last fully-connected layers are re-trained, but for ResNet-50b (and ResNet-18) the last residual layer has also been re-trained with the new retina data. The model is assigned to classify 5 classes: Grade 0(Normal), Grade 1, Grade 2, Grade 3, and Grade 4.<br>
-![Description of the image](Implementation 3/Images/ResNet.png)
-![Description of the image](Images/Vgg alexnet.png)
-![Description of the image](Images/layers info.png)
+![Description of the image](Implementation 3/Images/ResNet.png)<br>
+![Description of the image](Images/Vgg alexnet.png)<br>
+![Description of the image](Images/Layers Info.png)<br>
 
 <br><br>
 <h3>Training</h3>
