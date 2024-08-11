@@ -29,7 +29,7 @@ The results are provided for three different setups. In the first approach, we p
 <h5>ROC Curve & Histogram for ResNet50b</h5>
 <img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/Case1_ROC.png" width="800" height="400">
 <h5>Confusion Matrix for ResNet50b</h5>
-<img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case1_CM.png" width="800" height="400"><br>
+<img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case1_CM.png" width="500" height="400"><br>
 
 <h4>Case 2: 4 class scenario(Grade 0, 1+2, 3, 4)</h4>
 <img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case2.png" width="600" height="200"><br>
