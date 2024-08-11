@@ -24,11 +24,16 @@ To compare the ResNet-based system with the state of the art, we have trained an
 
 <h3>Results</h3>
 The results are provided for three different setups. In the first approach, we present the most challenging scenario: a full multiclass grading using the different models on the five different labels(classes: 0, 1, 2, 3, 4). Then, we test an aggregation of the 1 and 2 labels(classes: 0, 1+2, 3, 4). Finally, we also provide an analysis of the performance of a binary classification scenario covering grades 0 and 4. Evaluation parameters such as sensitivity and specificity (Sens. and Spec., only for binary classification) and the Receiver Operating Characteristic (ROC) curve, as well as the area under the ROC (AUC) were computed per class.<br>
-<h5>Case 1: Multiclass Classification(Grade 0, 1, 2, 3, 4)</h5>
-<img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case1.png" width="600" height="300"><br>
-<h5>Case 2: 4 class scenario(Grade 0, 1+2, 3, 4)</h5>
+<h4>Case 1: Multiclass Classification(Grade 0, 1, 2, 3, 4)</h4>
+<img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case1.png" width="600" height="300">
+<h5>ROC Curve & Histogram for ResNet50b</h5>
+<img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/Case1_ROC.png" width="800" height="400">
+<h5>Confusion Matrix for ResNet50b</h5>
+<img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case1_CM.png" width="800" height="400"><br>
+
+<h4>Case 2: 4 class scenario(Grade 0, 1+2, 3, 4)</h4>
 <img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case2.png" width="600" height="200"><br>
-<h5>Case 3: Binary Classification(Grade 0 & 3)</h5>
+<h4>Case 3: Binary Classification(Grade 0 & 3)</h4>
 <img src="https://github.com/KanchiSharma13/Internship-2024-code-files/blob/main/Implementation%203/Images/case3.png" width="600" height="200"><br>
 
 <h3>Conclusion & Discussion</h3>
