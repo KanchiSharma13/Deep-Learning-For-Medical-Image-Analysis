@@ -140,11 +140,10 @@ for fold, (train_index, val_index) in enumerate(skf.split(train_data, train_data
 
         if epoch_loss < best_loss:
             best_loss = epoch_loss
-            best_model_weights = model.state_dict()
+            torch.save(model.state_dict(), "train_weights_1.pth")
 
-    model.load_state_dict(best_model_weights)
+    model.load_state_dict(torch.load("train_weights_1.pth"))
 
-    
     #unfreeze layer 4
     for param in model.layer4.parameters():
         param.requires_grad = True
@@ -159,7 +158,6 @@ for fold, (train_index, val_index) in enumerate(skf.split(train_data, train_data
     optimizer = optim.SGD(model.parameters(), lr=0.001)
     best_loss = float('inf')
     best_model_weights = None
-    
     
     for epoch in range(50):
         model.train()
@@ -186,7 +184,7 @@ for fold, (train_index, val_index) in enumerate(skf.split(train_data, train_data
 
         if epoch_loss < best_loss:
             best_loss = epoch_loss
-            best_model_weights = model.state_dict()
+            torch.save(model.state_dict(), "train_weights_2.pth")
             no_improve = 0
         else:
             no_improve += 1
@@ -195,8 +193,7 @@ for fold, (train_index, val_index) in enumerate(skf.split(train_data, train_data
             print("Early stopping")
             break
 
-    model.load_state_dict(best_model_weights)
-    torch.save(model.state_dict(), "ResNet-50b FINAL.pth")
+    model.load_state_dict(torch.load("train_weights_2.pth"))
   
     # Evaluation
     model.eval()
