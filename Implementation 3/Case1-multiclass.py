@@ -140,9 +140,9 @@ for fold, (train_index, val_index) in enumerate(skf.split(train_data, train_data
 
         if epoch_loss < best_loss:
             best_loss = epoch_loss
-            torch.save(model.state_dict(), "train_weights_1.pth")
+            best_weights = torch.save(model.state_dict(), "train_weights_1.pth")
 
-    model.load_state_dict(torch.load("train_weights_1.pth"))
+    model.load_state_dict(best_weights)
 
     #unfreeze layer 4
     for param in model.layer4.parameters():
@@ -184,7 +184,7 @@ for fold, (train_index, val_index) in enumerate(skf.split(train_data, train_data
 
         if epoch_loss < best_loss:
             best_loss = epoch_loss
-            torch.save(model.state_dict(), "train_weights_2.pth")
+            best_weights = torch.save(model.state_dict(), "train_weights_2.pth")
             no_improve = 0
         else:
             no_improve += 1
@@ -193,7 +193,7 @@ for fold, (train_index, val_index) in enumerate(skf.split(train_data, train_data
             print("Early stopping")
             break
 
-    model.load_state_dict(torch.load("train_weights_2.pth"))
+    model.load_state_dict(best_weights)
   
     # Evaluation
     model.eval()
